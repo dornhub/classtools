@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>随机抽皓器</title>
+	<style>
+		#title{
+			text-align: center;
+		}
+		#title p{
+			color:#000000;
+			font-weight: 100;
+			font-size:35px;
+		}
+		#author{
+			color:grey;
+		}
+		#ch{
+			font-size: 25px;
+			font-weight: 900;
+			color: rgb(102,153,255);
+			border: 3px solid rgb(102,153,255);
+			border-radius: 30px;
+			width:100px;
+			height: 100px;
+			background: transparent;
+		}
+		#ch:hover{
+			background-color: rgb(102,153,255);
+			color: white;
+		}
+		#number{
+			font-size:50px;
+			color:rgb(102,153,255);
+		}
+		#inp{
+			font-size: 25px;
+			font-weight: 900;
+			color: rgb(102,153,255);
+			border: 1px solid rgb(102,153,255);
+			border-radius: 30px;
+			width:100px;
+			height: 30px;
+			background: transparent;
+		}
+		#nav{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			height:75px;
+			background-color:white;
+			position:fixed;
+		}
+		#navname1{
+			margin-left:175px;
+			font-weight:900;
+			background-color:transparent;
+			color:rgb(102,153,255);
+			font-size:30px;
+		}
+		#navname2{
+			font-weight:900;
+			height:50px;
+			color:white;
+			font-size:30px;
+			background-color:rgb(102,153,255);
+			border-radius:10px;
+		}
+		#navbut1,#navbut2,#navbut3,#navbut4,#navbut5,#navbut6,#navbut7,#navbut8,#navbut9{
+			width:80px;
+			color:black;
+			position:absolute;
+			top:0px;
+			height:75px;
+			background:transparent;
+			border:none;
+			position:stalic;
+		}
+		body{
+			width:100%;
+			height:100%;
+			background-color:rgb(240,240,240);
+		}
+		#navbut1{margin-left:5px;}
+		#navbut2{margin-left:85px;}
+		#navbut3{margin-left:165px;}
+		#navbut4{margin-left:245px;}
+		#navbut5{margin-left:325px;}
+		#navbut6{margin-left:405px;}
+		#navbut7{margin-left:485px;}
+		#navbut8{margin-left:565px;}
+		#navbut9{margin-left:645px;}
+		#navbut1:hover,#navbut2:hover,#navbut3:hover,#navbut4:hover,#navbut5:hover,#navbut6:hover,#navbut7:hover,#navbut8:hover,#navbut9:hover{
+			background-color:rgb(102,153,255);
+			color:white;
+		}
+		#center{
+			width: 50px;
+		}
+	</style>
+	<script>
+		document.oncontextmenu=function(e){return false;}
+	</script>
+  </head>
+  <body>
+	<div id="nav">
+	<p>
+		<span id="navname1">XMFLS</span>
+		<span id="navname2">&nbsp;2022OH&nbsp;</span>
+		&nbsp;&nbsp;
+		<button id="navbut1" onclick="window.open('https://dornhub.github.io/','_self');">首页</button>
+		<button id="navbut2" onclick="window.open('https://dornhub.github.io/study/','_self');">学习资料</button>
+		<button id="navbut3" onclick="window.open('https://dornhub.github.io/dgzl.html','_self');">𣿅国专栏</button>
+		<button id="navbut4" onclick="window.open('https://jkbutter-8.icoc.bz/');">夹克专栏</button>
+		<button id="navbut5" onclick="window.open('https://dornhub.github.io/zhzl/','_self');">整活专栏</button>
+		<button id="navbut6" onclick="window.open('https://dornhub.github.io/classtools/','_self');">课堂工具</button>
+		<button id="navbut7" onclick="window.open('https://dornhub.github.io/dornhub-d1-listening-test.mp4');">语言学习</button>
+	</p>
+</div>
+<br><br><br>
+    <div id="title">
+		<p>随机抽皓器</p>
+	</div>
+	<div align="center" id="shownum">
+		<strong id="number">- 请抽皓 -</strong>
+	</div>
+	<br>
+	<div align="center">
+		<p style="font-size:20px;">号数：1~<input id="inp" value="50"/></p>
+	</div>
+	<br>
+	<div id="but" align="center">
+		<button id="ch" onclick="chouhao();">抽皓</button>
+	</div>
+	
+	<br><br><br>
+	
+	<div id="author" align="center">
+		<strong>作者个人网页<a href="https://box3.codemao.cn/u/448769">https://box3.codemao.cn/u/448769</a>请点关注（夹带私货）</strong>
+	</div>
+    
+  </body>
+  <script>
+	  var die_people = 0;
+	  var num = 0;
+	  var tonhnb = 0;
+	  function chouhao(){
+		tonhnb = Math.random()*2.5;
+		num = document.getElementById("inp").value;
+		die_people = (Math.random()*num).toFixed(0);
+		if(die_people == 0){chouhao();}
+		if(die_people != 46){
+			chouhao();
+		}
+		document.getElementById("number").innerHTML = '46';
+	  }
+  </script>
+</html>
